@@ -4,6 +4,12 @@
         <a class="btn btn-primary btn-sm" href="<?= base_url('admin/employees/add') ?>">+ Add New</a>
     </div>
     <div class="card-body">
+        <?php if ($this->session->flashdata('new_user_password')): ?>
+            <div class='alert alert-success'>
+                Employee added. Temporary password: 
+                <strong><?= $this->session->flashdata('new_user_password') ?></strong>
+            </div>
+        <?php endif; ?>
         <table id="file-datatable" class="table table-bordered table-striped">
             <tr>
                 <th>ID</th>
